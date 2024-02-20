@@ -1,0 +1,16 @@
+<image-cropper
+    [imageChangedEvent]="eventData"
+    [maintainAspectRatio]="true"
+    [aspectRatio]="4 / 3"
+    format="png"
+    (imageCropped)="imageCropped($event)"
+    (imageLoaded)="imageLoaded($event)"
+    (cropperReady)="cropperReady()"
+    (loadImageFailed)="loadImageFailed()"
+></image-cropper>
+            <button class="btn btn-info m-2 text-light" >Rotate left</button>
+            <button class="btn btn-info m-2 text-light" >Rotate right</button>
+            <button class="btn btn-info m-2 text-light" >Reset</button>
+            <button class="btn btn-info m-2 text-light" (click)="save()">Save</button>
+            <button class="btn btn-info m-2 text-light" >Zoom In</button>
+            <button class="btn btn-info m-2 text-light" >Zoom Out</button>

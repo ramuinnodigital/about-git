@@ -1,0 +1,40 @@
+<!-- <ul>
+    <li *ngFor="let item of items"
+        [ngClass]="{ 'active': selectedItem === item.id }"
+        (click)="selectItem(item.id)">
+      {{ item.name }}
+    </li>
+  </ul>
+
+  <ul>
+    <li *ngFor="let item of items">
+      <a href="javascript:void(0)" 
+         [ngClass]="{ 'active': selectedItem === item.id }"
+         (click)="selectItem(item.id)">
+        {{ item.name }}
+      </a>
+    </li>
+  </ul> -->
+  
+ 
+  
+  
+  <div *ngFor="let color of colors">
+    <div [ngStyle]="{ 'background-color': color.active ? color.name : 'transparent', }">
+      {{ color.name }}
+      <button (click)="toggleColorActivation(color.name)">Toggle</button>
+    </div>
+  </div>
+
+
+  <ul>
+    <li *ngFor="let item of itemss" [ngClass]="item.isActive ? 'active-item' : 'default-item'">{{ item.name }}</li>
+  </ul>
+  
+  
+
+  <div [ngClass]="isActive ? 'active-color' : 'default-color'">Content</div>
+  <button [ngClass]="isActive ? 'active-button' : 'default-button'" (click)="toggleActive()">Toggle</button>
+
+  
+

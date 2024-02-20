@@ -1,0 +1,40 @@
+<section>
+    <div class="my-5 text-end">
+        <button class="log-out" (click)="logout()">Log Out</button>
+    </div>
+   <div class="d-flex justify-content-center my-5">
+    <div class="d-flex fsdf justify-content-center" *ngFor="let data of steparray">
+        <div class="round" (click)="getid(data.id)" [ngClass]="data.select?'ram':'ramudu'">
+            <P class="inside-number" >{{data.step}}</P>
+        </div>
+
+    </div>
+   
+   </div>
+   <div *ngIf="step === 1">
+    <app-signup-info (sendnumber)="step1trigger($event)"></app-signup-info>
+   </div>
+   <div *ngIf="step === 2">
+    <app-professinal-info (sendnumber)="step2trigger($event)"></app-professinal-info>
+   </div>
+   <div *ngIf="step === 3">
+    <app-personal-info (sendData)="step3trigger($event)"></app-personal-info>
+   </div>
+</section>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <canvas #canvas width="400" height="300" class="canvass"></canvas>
+            <div style="margin-left: 70px;">
+                <button class="btn btn-success" color="secondary" (click)="saveSignPad()">Save</button>
+                <button class="btn btn-danger ml-2" (click)="clearSignPad()">Clear</button>
+            </div>
+        </div>
+        <div class="col">
+            <div>
+                <img src='{{ signImage }}' />
+            </div>
+        </div>
+    </div>
+</div>

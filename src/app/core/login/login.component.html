@@ -1,0 +1,61 @@
+<section class="background">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                  <h2 class="text-center register-head">Login</h2>
+                <form [formGroup]="form">
+                    <div class="inside-card">
+                          <div class="mb-4">
+                            <label>Email</label>
+                            <input type="text" placeholder="Enter Your Email" class="form-control my-input" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f['email'].errors }">
+                            <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                                <div *ngIf="f['email'].errors['required']">Email is required</div>
+                              </div>
+                          </div>
+                          <div class="mb-4 parent">
+                            <label>Password</label>
+                            <input [type]="password" placeholder="Enter Your Password" class="form-control my-input" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f['password'].errors }">
+                            <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+                                <div *ngIf="f['password'].errors['required']">Password is required</div>
+                              </div>
+                              <div class="child" (click)="iconShowHide()">
+                                <i class="fa fa-eye"  *ngIf="show"></i>
+                                <i class="fa fa-eye-slash" *ngIf="!show"></i>
+                              </div>
+                          </div>
+                         
+                        
+                          <div class="text-end">
+                            <button class="login-btnn" (click)="onSubmit()">Register</button>
+                          </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-4">
+
+                        </div>
+                        <div class="col-md-4">
+                            <div class="d-flex justify-content-between">
+                                <img class="social-images" src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Facebook_Logo_2023.png">
+                                <div>
+                                    <img class="social-images" src="https://png.pngtree.com/png-vector/20221018/ourmid/pngtree-twitter-social-media-round-icon-png-image_6315985.png">
+                                </div>
+                                <div>
+                                    <img class="social-images" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/600px-Instagram_icon.png">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+
+                        </div>
+                      </div>
+                      <div  class="text-center">
+                        <p class="pt-5">Or Signup Using</p>
+                        <h6>Sign up</h6>
+                      </div>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

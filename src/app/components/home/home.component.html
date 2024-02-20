@@ -1,0 +1,22 @@
+<section>
+
+    <div class="mt-5">
+        <ul class="ul text-center">
+            <li *ngFor="let data of buttondata" (click)="sendStep(data.step)" [ngClass]="{active:data.selected===true}">{{data.title}}</li>
+            
+        </ul>
+    </div>
+
+    <div *ngIf="step === 1">
+        <app-company-details (buttonWasClicked)="step1trigger($event)"></app-company-details>
+    </div>
+
+    <div *ngIf="step === 2">
+        <app-contact-details (buttonWasClicked)="step2trigger($event)"></app-contact-details>
+    </div>
+
+    <div *ngIf="step === 3">
+        <app-kyc-online></app-kyc-online>
+    </div>
+   
+</section>

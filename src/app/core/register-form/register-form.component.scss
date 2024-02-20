@@ -1,0 +1,42 @@
+.background{
+    background: linear-gradient(#e66465, #9198e5);
+    height: 100vh;
+   
+    
+    
+}
+.register-head{
+    background-color: rgb(7, 7, 59);
+    color: white;
+    padding: 10px 0px;
+}
+.already{
+    float: inline-start;
+    color: blue;
+    font-weight: bold;
+    cursor: pointer;
+    padding-top: 10px;
+}
+.card{
+    width: 40%;
+    border: 1px solid gray;
+    margin: 0px auto;
+    margin-top: 10%;
+    background:#e9a9a9;
+}
+.inside-card{
+    padding: 20px 30px;
+}
+.lorum{
+    font-size: 10px;
+    color: white;
+}
+.register-btnn{
+    background-color: green;
+    font-size: 20px;
+    color: white;
+    padding: 8px 25px;
+    border: none;
+    border-radius: 5px;
+
+}

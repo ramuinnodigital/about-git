@@ -1,0 +1,22 @@
+<div class="side-nav">
+    <p>{{cartItmes.length}}</p>
+    <div *ngFor="let item of cartItmes; let i = index">
+        <p>{{ item}}</p>
+        <button (click)="removeFromCart(i)">Remove</button>
+      </div>
+      <!-- <button (click)="clearCart()">Clear Cart</button> -->
+</div>
+
+<div *ngFor="let item of items">
+    <p>{{ item.name }} - ${{ item.price * item.quantity }}</p>
+    <button (click)="incrementQuantity(item)">+</button>
+    <span>{{ myquantiey}}</span>
+    <button (click)="decrementQuantity(item)">-</button>
+  </div>
+  
+  <p>Total Price: ${{ getTotalPrice() }}</p>
+
+ 
+  <h1>{{calculateTotalAmount()}}</h1>
+
+  

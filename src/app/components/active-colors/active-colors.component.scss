@@ -1,0 +1,34 @@
+.active {
+    color: red; /* Your active color */
+  }
+
+  .active-color {
+    color: red; 
+    font-weight: bold;
+  }
+  
+  .default-color {
+    color: green; 
+    font-weight: bold;
+  }
+
+  .active-button {
+    background-color: blue; /* Change this to your active color */
+    color: white; /* Change this to your active color */
+  }
+  
+  .default-button {
+    background-color: gray; /* Change this to your default color */
+    color: black; /* Change this to your default color */
+  }
+
+
+  .active-item {
+    color: green; 
+    font-weight: bold;
+  }
+  
+  .default-item {
+    color: black;
+    font-weight: bold;
+ }

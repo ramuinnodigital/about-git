@@ -1,0 +1,103 @@
+<section>
+    <div class="card">
+        <form [formGroup]="form">
+            <h2 class="text-center">SIGN UP INFO</h2>
+        <div class="mb-3">
+            <label class="my-2">Current company</label>
+            <input type="text" class="form-control" formControlName="companyname" [ngClass]="{ 'is-invalid': submitted && f['companyname'].errors }">
+            <div *ngIf="submitted && f['companyname'].errors" class="invalid-feedback">
+                <div *ngIf="f['companyname'].errors['required']">Company Name is required</div>
+              </div>
+        </div>
+        <div class="mb-3">
+            <label class="my-2">Total experience</label>
+            <input type="text" class="form-control" formControlName="exp" [ngClass]="{ 'is-invalid': submitted && f['exp'].errors }">
+            <div *ngIf="submitted && f['exp'].errors" class="invalid-feedback">
+                <div *ngIf="f['exp'].errors['required']">Exp is required</div>
+              </div>
+        </div>
+        <div class="mb-3">
+            <label class="my-2">Designation</label>
+            <input type="text" class="form-control" formControlName="designation" [ngClass]="{ 'is-invalid': submitted && f['designation'].errors }">
+            <div *ngIf="submitted && f['designation'].errors" class="invalid-feedback">
+                <div *ngIf="f['designation'].errors['required']">Designation is required</div>
+              </div>
+        </div>
+
+        <div class="d-flex my-5">
+            <label class="container">One
+              <input type="radio" name="radio" formControlName="radiovalue" value="one" [ngClass]="{ 'is-invalid': submitted && f['radiovalue'].errors }">
+              <span class="checkmark">ONE</span>
+               <div *ngIf="submitted && f['radiovalue'].errors" class="invalid-feedback">
+                <div *ngIf="f['radiovalue'].errors['required']">radiovalue is required</div>
+              </div>
+            </label>
+            <label class="container">Two
+              <input type="radio" name="radio"  formControlName="radiovalue" value="two"  [ngClass]="{ 'is-invalid': submitted && f['radiovalue'].errors }">
+              <span class="checkmark">TWO</span>
+              <div *ngIf="submitted && f['radiovalue'].errors" class="invalid-feedback">
+                <div *ngIf="f['radiovalue'].errors['required']">radiovalue is required</div>
+              </div>
+            </label>
+            <label class="container">Three
+              <input type="radio" name="radio"  formControlName="radiovalue" value="three" [ngClass]="{ 'is-invalid': submitted && f['radiovalue'].errors }">
+              <span class="checkmark">THREE</span>
+              <div *ngIf="submitted && f['radiovalue'].errors" class="invalid-feedback">
+                <div *ngIf="f['radiovalue'].errors['required']">radiovalue is required</div>
+              </div>
+            </label>
+            <label class="container">Four
+              <input type="radio" name="radio"  formControlName="radiovalue" value="four" [ngClass]="{ 'is-invalid': submitted && f['radiovalue'].errors }">
+              <span class="checkmark">FOUR</span>
+              <div *ngIf="submitted && f['radiovalue'].errors" class="invalid-feedback">
+                <div *ngIf="f['radiovalue'].errors['required']">radiovalue is required</div>
+              </div>
+            </label>
+         </div>
+        <div class="text-center">
+            <button class="submittt" (click)="onSubmit()" [disabled]="!form.valid">Submit</button>
+        </div>
+        </form>
+    </div>
+</section>
+
+<section>
+  <!-- Button trigger modal -->
+  <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button> -->
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<select (change)="yesnoCheck(this);">
+  <option value="">---Valitse automerkkisi---</option>
+  <option value="lada">Lada</option>
+  <option value="mosse">Mosse</option>
+  <option value="volga">Volga</option>
+  <option value="vartburg">Vartburg</option>
+  <option value="other">Muu</option>
+</select>
+
+<div id="ifYes" *ngIf="selecedvalue">
+  <label for="car">Muu, mikä?</label> <input type="text" id="car" name="car" /><br />
+</div>
+
+

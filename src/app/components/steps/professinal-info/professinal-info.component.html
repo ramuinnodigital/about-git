@@ -1,0 +1,31 @@
+<section>
+    <div class="card">
+       <form [formGroup]="form">
+        <h2 class="text-center">PROFESSINAL INFO</h2>
+        <div class="mb-3">
+            <label class="my-2">current company</label>
+            <input type="text" class="form-control"  formControlName="username" [ngClass]="{ 'is-invalid': submitted && f['username'].errors }">
+            <div *ngIf="submitted && f['username'].errors" class="invalid-feedback">
+                <div *ngIf="f['username'].errors['required']">Username is required</div>
+              </div>
+        </div>
+        <div class="mb-3">
+            <label class="my-2">total experience</label>
+            <input type="text" class="form-control" formControlName="firstname" [ngClass]="{ 'is-invalid': submitted && f['firstname'].errors }">
+            <div *ngIf="submitted && f['firstname'].errors" class="invalid-feedback">
+                <div *ngIf="f['firstname'].errors['required']">First Name is required</div>
+              </div>
+        </div>
+        <div class="mb-3">
+            <label class="my-2">Designation</label>
+            <input type="text" class="form-control"  formControlName="lastname" [ngClass]="{ 'is-invalid': submitted && f['lastname'].errors }">
+            <div *ngIf="submitted && f['lastname'].errors" class="invalid-feedback">
+                <div *ngIf="f['lastname'].errors['required']">Last Name is required</div>
+              </div>
+        </div>
+        <div class="text-center">
+            <button class="submittt" (click)="onSubmit()">Submit</button>
+        </div>
+       </form>
+    </div>
+</section>

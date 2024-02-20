@@ -1,0 +1,39 @@
+<div class="main">
+    <form [formGroup]="form">
+        <div class="my-2">
+         <input type="text" placeholder="Name" class="form-control" formControlName="name" [ngClass]="{'is-invalid':submitted && f['name'].errors}">
+        </div>
+        <div class="my-2">
+         <input type="text" placeholder="email" class="form-control" formControlName="email" [ngClass]="{'is-invalid':submitted && f['email'].errors}">
+        </div>
+        <div class="my-2">
+         <input type="number" placeholder="Phone number" class="form-control" formControlName="phone" [ngClass]="{'is-invalid':submitted && f['phone'].errors}">
+        </div>
+        <div class="my-2">
+         <input type="number" placeholder="Enter your Amount" class="form-control" formControlName="amount" [ngClass]="{'is-invalid':submitted && f['amount'].errors}">
+        </div>
+        <div class="text-center">
+         <button class="butnn" (click)="submit()">Submit</button>
+        </div>
+     </form>
+</div>
+
+<div
+  class="novopay-response-modal modal fade"
+  role="dialog"
+  [ngClass]="{ show: showModal }"
+  id="response-modal"
+  [ngStyle]="{ display: 'none' }"
+>
+  {{ response }}
+</div>
+
+<div
+  class="novopay-response-modal modal fade"
+  role="dialog"
+  [ngClass]="{ show: showModal }"
+  id="razorpay-response"
+  [ngStyle]="{ display: 'none' }"
+>
+  {{ razorpayResponse }}
+</div>

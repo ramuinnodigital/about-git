@@ -1,0 +1,31 @@
+<div class="pan">
+   <div *ngIf="cropedimage == undefined">
+    <img class="pan-image my-3" src="https://www.shutterstock.com/image-vector/handwritten-signature-signed-papers-documents-260nw-2248268539.jpg">
+   </div>
+    <div *ngIf="cropedimage">
+        <img [src]="cropedimage" class="pan-image">
+    </div>
+
+    <input type="file" (change)="sendSignature($event)">
+</div>
+
+
+
+<!-- Button trigger modal -->
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModall" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <app-image-cropped type="signature"></app-image-cropped>
+        </div>
+       
+      </div>
+    </div>
+  </div>

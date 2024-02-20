@@ -1,0 +1,31 @@
+<div class="bank">
+    <div *ngIf="cropedimage == undefined">
+        <img class="pan-image my-3" src="https://png.pngtree.com/thumb_back/fh260/background/20220629/pngtree-bank-check-finance-pounds-payment-photo-image_2338631.jpg">
+    </div>
+    <div *ngIf="cropedimage">
+        <img [src]="cropedimage" class="pan-image">
+    </div>
+    <div>
+    <input type="file" (change)="sendbank($event)">
+    </div>
+</div>
+
+
+<!-- Button trigger modal -->
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalll" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <app-image-cropped type="bank"></app-image-cropped>
+        </div>
+       
+      </div>
+    </div>
+  </div>

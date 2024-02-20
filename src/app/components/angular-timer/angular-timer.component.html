@@ -1,0 +1,16 @@
+
+<!-- <p>Start editing to see some magic happen:</p>
+
+<p *ngIf="displayTimer">{{ display }}</p>
+<button (click)="submit()">Resend OTP</button>&nbsp;
+<button (click)="reset()">Reset Timer</button> -->
+<div class="my-5">
+    <button  (click)="send()">Go to payroll-Dashbaord</button>&nbsp;&nbsp;
+    <button routerLink="/lazy/second-lazy">Go to payroll-Dashbaord</button>
+</div>
+
+
+<div class="my-5 w-50 m-auto">
+    <ngx-otp-input [config]="otpInputConfig"  (fill)="handleFillEvent($event)"></ngx-otp-input>
+</div>
+

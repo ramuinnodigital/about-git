@@ -1,0 +1,16 @@
+<div class="w-50 m-auto justify-content-between d-flex ">
+    <button (click)="filterCategory('break fast')">Breakfast</button>
+    <button (click)="filterCategory('lunch')">Lunch</button>
+    <button (click)="filterCategory('dinner')">Dinner</button>
+    <button (click)="showAllItems()">All Items</button>
+</div>
+
+<div *ngFor="let item of filteredItems">
+    <p>{{ item.item }}</p>
+    <p>{{item.prie}}</p>
+</div>
+
+
+<button (click)="incrementProgress()" [disabled]="isButtonEnabled">Click Me</button>
+
+<button (click)="checkValue()">check</button>

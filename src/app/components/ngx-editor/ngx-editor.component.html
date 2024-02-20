@@ -1,0 +1,15 @@
+<div class="container">
+	<h2 class="title">Full featured editor demo</h2>
+
+	<div class="content">
+		<form [formGroup]="form">
+			<div class="editor">
+				<ngx-editor-menu [editor]="editor" [toolbar]="toolbar">
+				</ngx-editor-menu>
+				<ngx-editor [editor]="editor" formControlName="editorContent"></ngx-editor>
+			</div>
+
+            <button (click)="send()">send</button>
+		</form>
+	</div>
+</div>

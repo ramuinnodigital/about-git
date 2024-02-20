@@ -1,0 +1,55 @@
+<div class="array-box">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-12">
+    
+                <input #myuser type="text" class="form-control" [placeholder]="UserName">
+                <button (click)="onclick(myuser)" class="btn btn-danger mt-3">Create User</button>
+    
+                <table class="table table-bordered mt-3">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>Sr.No</th>
+                            <th>User Name</th>
+                            <th>Delete User</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let i of userlist;let a=index">
+                            <td>{{a+ 1}}</td>
+                            <td>{{i}}</td>
+                            <td>
+                                <button (click)="ondelete(a)" class="btn btn-success">Remove User</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+    
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <div>
+    <h2>Timer: {{ formatTime(countdownSeconds) }}</h2>
+    <button (click)="clear()">Clear Time</button>
+</div> -->
+
+
+<div>
+    <label for="numberInput">Enter Number:</label>
+    <input type="number" id="numberInput" [(ngModel)]="number" />
+  </div>
+  
+  <div>
+    <label for="percentageInput">Enter Percentage:</label>
+    <input type="number" id="percentageInput" [(ngModel)]="percentage"  />
+  </div>
+
+  <div>
+    <button (click)="calculatePercentage()">check percentage</button>
+  </div>
+  
+  <div *ngIf="result !== undefined">
+    <p>{{ result }}</p>
+  </div>
+  

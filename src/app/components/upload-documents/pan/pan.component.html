@@ -1,0 +1,31 @@
+<div class="pan">
+    <div *ngIf="cropedImage == undefined">
+        <img class="pan-image my-3"  src="https://images.livemint.com/img/2019/10/25/1600x900/pan_card_1565610340828_1572021543426.PNG">
+    </div>
+   ><div *ngIf="cropedImage">
+    <img [src]="cropedImage" class="pan-image">
+   </div>
+    <input type="file" (change)="sendFile($event)">
+</div>
+
+
+
+
+<!-- Button trigger modal -->
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <app-image-cropped type="pan"></app-image-cropped>
+        </div>
+       
+      </div>
+    </div>
+  </div>

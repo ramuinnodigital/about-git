@@ -1,0 +1,85 @@
+<form [formGroup]="fg">
+    <div class="mb-3">
+        <input type="text" placeholder="full name" class="form-control" formControlName="fullname"
+            [ngClass]="{'is-invalid':submitted && f['fullname'].errors}">
+        <div class="invalid-feedback" *ngIf="submitted && f['fullname'].errors">
+            <div *ngIf="f['fullname'].errors['required']">
+                fullname is required
+            </div>
+        </div>
+    </div>
+    <div class="mb-3">
+        <input type="text" placeholder="Email" class="form-control" formControlName="email"
+            [ngClass]="{'is-invalid':submitted && f['email'].errors}">
+        <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+            <div *ngIf="f['email'].errors['required']">
+                email is required
+            </div>
+        </div>
+    </div>
+    
+    <div class="btn btn-outline-secondary dropdown-toggle"
+                                                    [ngClass]="{'is-invalid':submitted && f['selectMrsorMs'].errors}"
+                                                    formControlName="selectMrsorMs" id="dropdownMenuButton1"
+                                                    data-bs-toggle="dropdown" aria-expanded="false">select
+                                                </div>
+                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                    <li><a class="dropdown-item">Mr</a></li>
+                                                    <li><a class="dropdown-item" (click)="updateFormControl('mr')">Mrs</a></li>
+                                                    <li><a class="dropdown-item">Ms</a></li>
+                                                </ul>
+                                                <button (click)="updateFormControl('mr')">send</button>
+  
+    <select (change)="selectedValue($event)">
+        <option value="">select</option>
+        <option value="yes" >Do you want</option>
+        <option value="no">i dont want</option>
+    </select>
+    <h2 class="text-center py-5">Form array validations</h2>
+   
+    <div formArrayName="skills">
+        <div *ngFor="let skill of skills.controls; let i=index">
+            <div [formGroupName]="i">
+               
+                <div class="mb-3">
+                    <input type="text" formControlName="skill" placeholder="skill" class="form-control" [ngClass]="{'is-invalid':submitted && _Value(i).controls['skill'].errors}">
+                    <p *ngIf="submitted && _Value(i).controls['skill'].errors" class="form-error">skill is required</p>
+                </div>
+
+                <div class="mb-3">
+                    <input type="text" formControlName="exp" placeholder="experience" class="form-control" [ngClass]="{'is-invalid':submitted && _Value(i).controls['exp'].errors}">
+                    <p *ngIf="submitted && _Value(i).controls['exp'].errors" class="form-error">exp is required</p>
+                </div>
+
+                <div *ngIf="showhide">
+                    <div class="mb-3">
+                        <input type="text" placeholder="password" formControlName="password" class="form-control" [ngClass]="{'is-invalid':submitted && _Value(i).controls['password'].errors}">
+                        <p *ngIf="submitted && _Value(i).controls['password'].errors" class="form-error">password is required</p>
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" placeholder="confrimpassword" formControlName="confrimpassword" class="form-control" [ngClass]="{'is-invalid':submitted && _Value(i).controls['confrimpassword'].errors}">
+                        <p *ngIf="submitted && _Value(i).controls['confrimpassword'].errors" class="form-error">confrimpassword is required</p>
+                    </div>
+                    <div class="mb-3">
+                        <textarea type="text" placeholder="address" formControlName="address" class="form-control" [ngClass]="{'is-invalid':submitted && _Value(i).controls['address'].errors}"></textarea>
+                        <p *ngIf="submitted && _Value(i).controls['address'].errors"  class="form-error">Address is required</p>
+                    </div>
+                    
+                </div>
+                <select (change)="openCloseValue($event,_Value(i))">
+                    <option value="">select</option>
+                    <option value="open">open</option>
+                    <option value="close">close</option>
+                </select>
+            </div>
+        </div>
+       
+    </div>
+
+    <div class="text-center">
+        <button (click)="submit()">Submit</button>
+    </div>
+
+   
+</form>
+

@@ -1,0 +1,8 @@
+<div style="text-align:center">
+  <h1 style="margin-bottom:30px;">Video Record Using Angular by Rajesh Gami</h1>
+  <video class="video" #liveVideo [style.display]="isRecording ? 'block' : 'none'" autoplay></video>
+  <video class="video" style="width:480px !important;" [style.display]="isRecording ? 'none' : 'none'" controls #recordedVideo></video>
+  <br>
+  <button class="btn btn-success btn-lg" *ngIf="!isRecording" (click)="startVideoRecording()">Start Video</button>
+  <button class="btn btn-warning btn-lg" *ngIf="isRecording" (click)="stopVideoRecording()">Stop Recording</button>
+</div>

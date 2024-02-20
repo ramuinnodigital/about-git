@@ -1,0 +1,12 @@
+<div class="main-bar">
+    <button class="move" (click)="open()" *ngIf="subjectValue === true">Move to Side</button>
+    <button class="move" (click)="close()" *ngIf="subjectValue === false">Move to close</button>
+
+
+    
+<input type="text" placeholder="send data....." [(ngModel)]="senddataaaa" class="my-4">
+
+<button (click)="sendData()">send data</button>
+</div>
+
+

@@ -1,0 +1,41 @@
+<form [formGroup]="skillsForm" (ngSubmit)="onSubmit()">
+ 
+    <div>
+      <label for="name">Name </label>
+      <input type="number"  name="name" formControlName="mobile"  [ngClass]="{ 'is-invalid': submitted && f['mobile'].errors }">
+      <div *ngIf="submitted && f['mobile'].errors" class="invalid-feedback">
+        <div *ngIf="f['mobile'].errors['required']">mobile is required</div>
+      </div>
+    </div>
+   
+   
+    Skills:
+    <div formArrayName="skills">
+      <div *ngFor="let skill of skills; let i=index">
+        <div [formGroupName]="i">
+          <input type="text" formControlName="skill" [ngClass]="{'is-invalid':submitted && skillsForm.get('skills.'+ i + '.skill')?.errors}">
+          <div *ngIf="submitted && skillsForm.get('skills.' + i +'.skill')?.errors" class="invalid-feedback">
+            <div *ngIf="submitted && skillsForm.get(['skills', i,'skill'])?.hasError('required')">
+                skills is required
+            </div>
+        </div>
+        
+        </div>
+      </div>
+    </div>
+   
+    <p>
+      <button type="submit">Submit</button>
+    </p>
+   
+  </form>
+   
+   
+  <p>
+    <button type="button" (click)="addSkills()">Add</button>
+  </p>
+   
+  <!-- <button (click)="incease()">increase</button> -->
+
+  
+  

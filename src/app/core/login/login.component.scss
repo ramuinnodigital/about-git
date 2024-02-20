@@ -1,0 +1,45 @@
+.background{
+    background: linear-gradient(#e66465, #9198e5);
+    height: 100vh; 
+    padding-top: 10%;
+}
+.card{
+    width: 40%;
+    border: 1px solid gray;
+    margin: 0px auto;
+    padding: 20px;
+    
+   
+}
+.inside-card{
+    padding: 20px 30px;
+}
+.my-input[type=text]{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-size: 12px;
+    outline: none;
+
+}
+.social-images{
+    width: 30px;
+    height: 30px;
+}
+.login-btnn{
+    width: 100%;
+    border-radius: 20px;
+    padding: 8px 10px;
+    background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+    border: none;
+}
+.parent{
+    position: relative;
+}
+.child{
+    position: absolute;
+    top: 30px;
+    right: 10px;
+
+
+}
