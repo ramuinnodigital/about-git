@@ -1,0 +1,56 @@
+<!-- <div>
+    <input type="{{ showPassword ? 'text' : 'password' }}" [(ngModel)]="password" placeholder="Enter Password">
+    <button class="icon-button" (click)="togglePasswordVisibility()">
+        <i class="fas" [ngClass]="{ 'fa-eye': !showPassword, 'fa-eye-slash': showPassword }"></i>
+      </button>
+</div> -->
+
+
+<div>
+    <input type="checkbox" [(ngModel)]="filterone"> Price Range 1 To 100
+</div>
+<div>
+    <input type="checkbox" [(ngModel)]="filtertwo"> Price Range 100 To 200
+</div>
+<div>
+    <input type="checkbox" [(ngModel)]="filterthree"> Price Range 200 To 300
+</div>
+<div>
+    <input type="checkbox" [(ngModel)]="filterfour"> Price Range 300 To 400
+</div>
+<div>
+    <input type="checkbox" [(ngModel)]="filterfive"> Price Range 400 To 500
+</div>
+
+
+<div *ngFor="let data of getfilter()">
+    <p>{{data.price}}</p>
+</div>
+
+<div class="row">
+<div class="col-md-4">
+    <div class="all-boxes" *ngFor="let data of products">
+        <p>{{data.name}},{{data.price}}</p>
+        <div class="star-rating">
+            <!-- <span *ngFor="let star of stars" class="star" [ngClass]="{'filled':star <= data.rating,'half-filled': star === data.rating - 0.2}">
+              &#9733;
+            </span> -->
+
+            
+           
+          </div>
+    </div>
+</div>
+</div>
+
+
+  
+
+
+
+
+  
+
+
+  
+  

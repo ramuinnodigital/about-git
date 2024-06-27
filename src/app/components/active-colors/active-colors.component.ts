@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-active-colors',
@@ -32,7 +32,7 @@ selectedItem: number | null = null;
 
 
 
-constructor(private route: ActivatedRoute) {}
+constructor(private route: ActivatedRoute,private routee:Router) {}
 
 
   selectItem(itemId: number) {
@@ -52,6 +52,7 @@ constructor(private route: ActivatedRoute) {}
 
 
   toggleActive() {
+    // this.routee.navigate(['/subject'],{queryParams:{oder:'onlinee',price:2525363737384}})
     this.isActive = !this.isActive;
   }
 }

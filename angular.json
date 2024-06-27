@@ -37,7 +37,10 @@
               "node_modules/ngx-spinner/animations/ball-scale-multiple.css"
               
             ],
-            "scripts": [ "./node_modules/jquery/dist/jquery.min.js"]
+            "scripts": [ "./node_modules/jquery/dist/jquery.min.js",
+            "node_modules/apexcharts/dist/apexcharts.min.js"
+          ]
+            
           },
           "configurations": {
             "production": {
@@ -76,7 +79,10 @@
               "browserTarget": "project:build:development"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "development",
+          "options": {
+            "proxyConfig": "src/proxy.conf.js"
+          }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",

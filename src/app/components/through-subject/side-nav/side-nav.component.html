@@ -1,11 +1,15 @@
+<app-add-cart></app-add-cart>
 <div class="side-nav">
-    <p>{{cartItmes.length}}</p>
-    <div *ngFor="let item of cartItmes; let i = index">
-        <p>{{ item}}</p>
+  <div class="alert alert-danger" *ngIf="alert">
+  Item alredy exists.
+  </div>
+      <div *ngFor="let item of cartItmes; let i = index">
+        <p class="clor" [ngClass]="{'active':singleidddd == equalids}">{{ item.id}}</p>
         <button (click)="removeFromCart(i)">Remove</button>
       </div>
       <!-- <button (click)="clearCart()">Clear Cart</button> -->
 </div>
+
 
 <div *ngFor="let item of items">
     <p>{{ item.name }} - ${{ item.price * item.quantity }}</p>

@@ -1,0 +1,43 @@
+<div class="main">
+ <form [formGroup]="form">
+    <div class="my-3">
+        <input type="text" placeholder="Name" class="form-control" formControlName="name"/>
+      </div>
+      <div class="my-3">
+        <input type="text" placeholder="Class" class="form-control" formControlName="class"/>
+      </div>
+      <div class="my-3">
+        <input type="text" placeholder="Roll No" class="form-control" formControlName="roll"/>
+      </div>
+      <div class="my-3">
+        <input type="text" placeholder="Phone" class="form-control" formControlName="phone"/>
+      </div>
+    
+      <div>
+        <button (click)="add()">Add</button>
+      </div>
+ </form>
+</div>
+
+
+<table class="table my-5">
+    <thead>
+        <tr>
+            <th>S.no</th>
+            <th>Nmae</th>
+            <th>Roll No</th>
+            <th>Class</th>
+            <th>Phone</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of studentData; let i=index">
+            <td>{{i+1}}</td>
+            <td>{{data.studentName}}</td>
+            <td>{{data.studentClass}}</td>
+            <td>{{data.studentRoll}}</td>
+            <td>{{data.studentPhone}}</td>
+            <td><button (click)="delete(data._id)">Delete</button></td>
+        </tr>
+    </tbody>
+</table>

@@ -3,7 +3,17 @@
 
 <hr class="new1">
 </div>
-<app-child (toggleEvent)="toggleControl()"></app-child>
+<input type="text" placeholder="enter your text here...." [(ngModel)]="mytext">
+<!-- <ng-content *ngIf="color == 'red'">
+    <app-child [color]="color" [name]="name" [mytext]="mytext" ></app-child>
+</ng-content> -->
+
+<!-- <p *ngIf="color !== 'green'">ng-if -->
+    <button (click)="go()">go</button>
+    <button (click)="callChildMethod()">Call Child Method</button>
+ <app-child [color]="color" [name]="name" [mytext]="mytext" [message]="parentMessage"></app-child>
+<!-- </p>    -->
+
 
 
 

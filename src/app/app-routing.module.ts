@@ -24,6 +24,31 @@ import { ParentBarComponent } from './components/through-subject/parent-bar/pare
 import { PaymentGatewayComponent } from './payment-gateway/payment-gateway.component';
 import { InstallRazorpayComponent } from './components/install-razorpay/install-razorpay.component';
 import { ActiveColorsComponent } from './components/active-colors/active-colors.component';
+import { CurdComponent } from './components/curd/curd.component';
+import { CalculatorComponent } from './components/calculator/calculator.component';
+import { OrderTrackingComponent } from './components/order-tracking/order-tracking.component';
+import { NgxChartsComponent } from './components/ngx-charts/ngx-charts.component';
+import { SelectImageComponent } from './components/select-image/select-image.component';
+import { SwitchMethodComponent } from './components/switch-method/switch-method.component';
+import { BoxArrayComponent } from './components/box-array/box-array.component';
+import { ShowHideComponent } from './components/show-hide/show-hide.component';
+import { PraticeComponent } from './components/pratice/pratice.component';
+import { BankDetailsComponent } from './components/bank-details/bank-details.component';
+import { PraticeOnArrayComponent } from './components/pratice-on-array/pratice-on-array.component';
+import { PracticeOnFilterComponent } from './components/all-array-methods/practice-on-filter/practice-on-filter.component';
+import { NewCropperComponent } from './components/new-cropper/new-cropper.component';
+import { TextCropperComponent } from './components/text-cropper/text-cropper.component';
+import { StepMainComponent } from './components/query-params/step-main/step-main.component';
+import { ConfirmGuard } from './services/confrim.guard';
+import { FormAndPartnerComponent } from './components/form-and-partner/form-and-partner.component';
+import { HostlisterAndHostbindingComponent } from './components/hostlister-and-hostbinding/hostlister-and-hostbinding.component';
+import { UpdateValueWithIndexComponent } from './components/update-value-with-index/update-value-with-index.component';
+import { DateFilterComponent } from './components/date-filter/date-filter.component';
+import { SelectDisabledComponent } from './components/select-disabled/select-disabled.component';
+import { CountryCodeComponent } from './components/country-code/country-code.component';
+import { CalBackFunctionsComponent } from './components/cal-back-functions/cal-back-functions.component';
+import { FormThemesColorComponent } from './components/form-themes-color/form-themes-color.component';
+import { NotificationsComponent } from './components/notifications/notifications.component';
 
 
 const routes: Routes = [
@@ -49,8 +74,33 @@ const routes: Routes = [
   {path:'video',component:VideoRecorderComponent},
   {path:'payment/:id',component:PaymentGatewayComponent},
   {path:'install',component:InstallRazorpayComponent},
-  {path:'',component:ActiveColorsComponent},
-  {path:'lazy',loadChildren:()=> import('../app/components/lazy/lazy.module').then(m=> m.LazyModule)}
+  {path:'active',component:ActiveColorsComponent},
+  {path:'curd',component:CurdComponent},
+  {path:'calculator',component:CalculatorComponent},
+  {path:'order',component:OrderTrackingComponent},
+  {path:'chart',component:NgxChartsComponent},
+  {path:'select-image',component:SelectImageComponent},
+  {path:'switch',component:SwitchMethodComponent},
+  {path:'box',component:BoxArrayComponent},
+  {path:'showhide',component:ShowHideComponent},
+  {path:'practice-form-array',component:PraticeComponent},
+  {path:'bank',component:BankDetailsComponent},
+  {path:'pratice-on-map',component:PraticeOnArrayComponent},
+  {path:'filter',component:PracticeOnFilterComponent},
+  {path:'new-cropper',component:NewCropperComponent},
+  {path:'text',component:TextCropperComponent},
+  {path:'step-main',component:StepMainComponent},
+  {path:'formsandpartner',component:FormAndPartnerComponent},
+  {path:'hostlister',component:HostlisterAndHostbindingComponent},
+  {path:'updatewithindexvalue',component:UpdateValueWithIndexComponent},
+  {path:'date-filter',component:DateFilterComponent},
+  {path:'select-disbaled',component:SelectDisabledComponent},
+  {path:'country-code',component:CountryCodeComponent},
+  {path:'call-back',component:CalBackFunctionsComponent},
+  {path:'themes',component:FormThemesColorComponent},
+  {path:'',component:NotificationsComponent},
+  {path:'lazy',loadChildren:()=> import('../app/components/lazy/lazy.module').then(m=> m.LazyModule)},
+  { path: 'dashboard', loadChildren: () => import('./components/dashboard/dashboard.module').then(m => m.DashboardModule) }
 
 ];
 

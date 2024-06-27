@@ -1,0 +1,21 @@
+<h1 class="text-center my-5">query params</h1>
+
+<div *ngFor="let data of changeroute" class="display">
+    <button (click)="selectedValue(data.step)">{{data.title}}</button>
+</div>
+
+<div *ngIf="selected == 1">
+    <app-step-one></app-step-one>
+</div>
+
+<div *ngIf="selected == 2">
+    <app-step-two></app-step-two>
+</div>
+
+<div *ngIf="selected == 3">
+    <app-step-three></app-step-three>
+</div>
+
+<div *ngIf="selected == 4">
+    <app-step-four></app-step-four>
+</div>

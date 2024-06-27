@@ -1,0 +1,29 @@
+<div>
+    <label for="startDate">Start Date:</label>
+    <input type="date" id="startDate" [(ngModel)]="startDate">
+    
+    <label for="endDate">End Date:</label>
+    <input type="date" id="endDate" [(ngModel)]="endDate">
+    
+    <button (click)="filterData()">Filter</button>
+  </div>
+  <div *ngIf="filteredData.length === 0">
+    No data found
+  </div>
+  
+  <table *ngIf="filteredData.length > 0">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Data</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of filteredData">
+        <td>{{ item.date | date }}</td>
+        <td>{{ item.data }}</td>
+      </tr>
+    </tbody>
+   
+  </table>
+  

@@ -9,29 +9,54 @@ import { SubjectService } from 'src/app/services/subject.service';
 })
 export class SideNavComponent {
 
-  cartItmes:any=[]
+  cartItmes:any[] = []
 
   items = [
     { id: 1, name: 'Item 1', price: 10, quantity: 1 },
     { id: 2, name: 'Item 2', price: 20, quantity: 1 },
     { id: 3, name: 'Item 3', price: 30, quantity: 1 },
-    { id: 4, name: 'Item 4', price: 40, quantity: 1 }
+    { id: 4, name: 'Item 4', price: 40, quantity: 1 },
+    { id: 5, name: 'Item 5', price: 100, quantity: 2 }
   ];
   totalvalue: any;
   myy: any;
+  alert: boolean = false;
+  equalids: any;
+  singleidddd: any;
 
   
 
 
   constructor(private subject:SubjectService){
-    this.cartItmes=this.subject.returnItems()
-    console.log(this.cartItmes,'cartitems')
+    this.subject.cartSubject.subscribe(res => {
+      this.singleidddd=res.id
+      if(this.cartItmes.find(x => x.id == res.id)){
+this.alert = true;
+      } else {
+        this.cartItmes.push(res);
+      }
+    })
+   
 
   }
 
+  ngOnInit(){
+    this.subject.receiveSubject.subscribe((res:any)=>{
+      this.equalids=res;
+      // if(this.singleidddd == this.equalids){
+      //   alert('both are equal')
+      // }else{
+      //   alert('not equal')
+      // }
+    })
+
+    alert(this.items.reduce((total,item)=>total +(item.price * item.quantity),0))
+  }
+
   removeFromCart(i:any){
-    this.subject.removeiteems(i)
-    console.log('')
+
+  this.cartItmes.splice(i,1)
+    
   }
 
   getTotalPrice() {

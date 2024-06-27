@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+      <div class="col-12 col-md-10 hh-grayBox pt45 pb20">
+        <div class="row">
+          <div *ngFor="let status of orderStatuses; let i = index; let last = last" class="order-tracking">
+            <div class="main">
+               <div>
+                <diV class="round" [ngClass]="{'bg-prnding': status.status_code == 'Ordered', 'bg-shipped': status.status_code == 'Shipped', 'bg-success': status.status_code == 'Delivered', 'bg-canceled': status.status_code == 'cancelled'}"></diV>
+                <div *ngIf="!last || orderStatuses.length == 1" class="line" [ngClass]="{'prnding': status.status_code == 'Ordered', 'shipped': status.status_code == 'Shipped', 'success': status.status_code == 'Delivered', 'canceled': status.status_code == 'cancelled'}"></div>
+               </div>
+                <div class="stats">{{status.status}}<br><span>{{status.date}}</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+ 

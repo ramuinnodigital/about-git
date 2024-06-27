@@ -1,0 +1,42 @@
+<div>
+    <form [formGroup]="form">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <input type="text" placeholder="Fname" class="form-control" formControlName="Fname" (keyup)="send($event)" [ngClass]="{'is-invalid': submitted && (form.controls['Fname'].errors)}">
+                </div>
+                <div class="col-md-6">
+                    <input type="text" placeholder="Lname" class="form-control"  formControlName="Lname" (keyup)="sendtwo($event)"  [ngClass]="{'is-invalid': submitted && form.controls['Fname'].errors}">
+                </div>
+            </div>
+
+            <div class="my-4 text-end">
+                <button (click)="add()">add partner</button>
+            </div>
+        </div>
+        <div class="text-center my-2">
+            <button (click)="submit()">submit</button>
+        </div>
+    </form>
+   <div>
+    <form [formGroup]="partner" *ngIf="show">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <input type="text" placeholder="Email" class="form-control" formControlName="email" [ngClass]="{'is-invalid':submitted && f['email'].errors}">
+                </div>
+                <div class="col-md-6">
+                    <input type="text" placeholder="Password" class="form-control" formControlName="password" [ngClass]="{'is-invalid': submitted && f['password'].errors}">
+                </div>
+            </div>
+            <div>
+                <button (click)="parnter()">add</button>
+            </div>
+        </div>
+    </form>
+   </div>
+</div>
+
+
+<button (click)="go()">go</button>
+<app-child-two  [messagefromchild]="second" [inputvalue]="senddata"></app-child-two>

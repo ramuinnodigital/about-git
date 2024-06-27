@@ -1,0 +1,45 @@
+
+<form [formGroup]="form">
+    <div class="container">
+        <div class="text-end">
+            <button type="button" class="btn btn-primary position-relative mt-5"  (click)="sendread()">
+                Notifications
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    {{unreadlenth}}
+                  <span class="visually-hidden"></span>
+                </span>
+              </button>
+        </div>
+        <div class="mt-5">
+            <textarea type="text" placeholder="request" formControlName="request" class="form-control"></textarea>
+        </div>
+        
+       <div class="text-center">
+        <button class="my-5 btn-primary" (click)="submit()">send</button>
+       </div>
+    </div>
+</form>
+
+<form [formGroup]="nomineeForm">
+    <div class="container">
+        <div class="row my-2">
+            <div class="col-md-6">
+                <input type="text" placeholder="Guardian Name" class="form-control" formControlName="nomineeName">
+            </div>
+            <div class="col-md-6">
+                <input type="text" placeholder="Guardian Email" class="form-control" formControlName="nomineeEmail">
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="col-md-6">
+                <input type="number" placeholder="Guardian Phone" class="form-control" formControlName="nomineePhone">
+            </div>
+            <div class="col-md-6">
+                <input type="text" placeholder="Guardian Address" class="form-control" formControlName="nomineeAddress">
+            </div>
+        </div>
+    </div>
+    <div>
+        <button (click)="nomineesubmit()">submit</button>
+    </div>
+</form>

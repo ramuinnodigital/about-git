@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 import { NgxSpinnerService } from 'ngx-spinner';
 
 
@@ -11,12 +11,20 @@ import { NgxSpinnerService } from 'ngx-spinner';
 })
 export class LoginService {
 
-
+  private dataSubject = new Subject<any>();
   constructor(private http:HttpClient,private spinner: NgxSpinnerService) { }
 
   postData(data:any){
    return this.http.post<any>("http://localhost:3000/new",data)
     
+  }
+
+  sendData(data: any) {
+    this.dataSubject.next(data);
+  }
+
+  getDataaaa() {
+    return this.dataSubject.asObservable();
   }
 
   getData(){
@@ -37,6 +45,10 @@ export class LoginService {
 
   hideSpinner() {
     this.spinner.hide();
+  }
+
+  get(){
+   return this.http.get<any>('https://jsonplaceholder.typicode.com/comments')
   }
 
 

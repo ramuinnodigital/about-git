@@ -1,0 +1,37 @@
+<p myDir>
+    Host Element 
+    <br><br>
+
+    We have a (HostListener) listening to this host's 
+    <b>click event</b> declared with @HostListener
+
+    <br><br>
+
+    And we have a (HostBinding) binding <b>the role property</b>
+    to host element declared with @HostBinding 
+    and checking host's property binding updates.
+    
+    If any property change is found I will update it.
+</p>
+
+
+<input id="myInput" type="text">
+<button (click)="toggleHighlight()">Toggle Highlight</button>
+<h1 *ngFor="let item of dataArray" >{{item}}</h1>
+
+<form [formGroup]="myForm">
+    <input type="range" min="1" max="100" formControlName="range1Value" (change)="onChangeShare1()">
+    <input type="range" min="1" max="100" formControlName="range2Value" (change)="onChangeShare2()">
+    <input type="range" min="1" max="100" formControlName="range3Value" (change)="onChangeShare3()">
+  </form>
+
+
+  <div>
+    <select >
+      <option *ngFor="let option of loopOptions()" [value]="option">{{ option }}</option>
+    </select>
+    <button (click)="toggleOptions()">View All</button>
+  </div>
+  
+  
+

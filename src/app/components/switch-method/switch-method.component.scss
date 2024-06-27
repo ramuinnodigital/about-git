@@ -1,0 +1,25 @@
+.zoom-container {
+    position: relative;
+    width: 400px; /* Set the desired width for the image container */
+    /* Set the desired height for the image container */
+    overflow: hidden;
+  }
+  
+  .zoom-image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+//   .zoom-box {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100px; /* Set the width of the zoomed-in box */
+//     height: 100px; /* Set the height of the zoomed-in box */
+//     border: 2px solid #000;
+//     pointer-events: none;
+//     display: none;
+//     z-index: 999; /* Ensure the box is above the image */
+//   }
+  

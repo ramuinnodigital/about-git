@@ -98,7 +98,7 @@ export class AngularTimerComponent {
   }
   send(){
     this.route.navigate(['/lazy'])
-    this.service.sendData.next(this.myname)
+    // this.service.sendData.next(this.myname)
 
   }
 

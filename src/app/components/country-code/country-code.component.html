@@ -1,0 +1,9 @@
+<form [formGroup]="phoneNumberForm">
+    <div class="phone-number-container">
+        <select   formControlName="countryCode" class="country-code-select">
+          <option *ngFor="let data of countryCodes">{{data.code}}</option>
+        </select>
+        <input type="text" formControlName="phoneNumber" placeholder="Enter phone number" class="phone-number-input" />
+      </div>
+      
+</form>

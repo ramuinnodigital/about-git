@@ -1,0 +1,56 @@
+
+  <div class="form-check form-switch m-5">
+    <input class="form-check-input" type="checkbox" id="toggleSwitch"  [(ngModel)]="isChecked">
+    <label class="form-check-label" for="toggleSwitch">Toggle Switch</label>
+  </div>
+  
+
+  
+
+<!-- <lib-ngx-image-zoom class="my-image"
+[thumbImage]=myThumbnail
+[fullImage]=myFullresImage
+[lensWidth]="200"
+[lensHeight]="200"
+[magnification]="1"
+[enableScrollZoom]="true"
+[enableLens]="true"
+
+></lib-ngx-image-zoom> -->
+
+<div class="zoom-container" (mousemove)="handleMouseMove($event)" (mouseleave)="resetZoom()">
+    <img src="{{ imageUrl }}" alt="{{ imageAlt }}" class="zoom-image" id="zoomImage" />
+    <div class="zoom-box" id="zoomBox"></div>
+  </div>
+
+  <!-- <div class="progress">
+    <div class="progress-bar" role="progressbar" [style.width.%]="progress">{{ progress }}%</div>
+  </div> -->
+  
+  
+  <input type="file" (change)="onFileSelected($event)">
+
+<div class="progress">
+  <div class="progress-bar" role="progressbar" [style.width.%]="progress">{{ progress }}%</div>
+</div>
+
+
+<select [(ngModel)]="selectedNumber" (change)="updateNames()">
+  <option *ngFor="let num of numbers" [value]="num">{{ num }}</option>
+</select>
+
+<div *ngFor="let name of repeatedNames">{{ name }}</div>
+
+
+  
+  
+  
+  
+  
+
+  
+
+
+
+  
+

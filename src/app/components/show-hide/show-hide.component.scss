@@ -1,0 +1,54 @@
+.icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .boxx{
+    padding: 20px;
+    border: 1px solid grey;
+  }
+
+  .star-rating {
+    display: inline-block;
+    font-size: 24px;
+  }
+  
+  .star {
+    cursor: pointer;
+    color: #ccc; /* Default star color */
+  }
+  
+  .star.filled {
+    color: gold; /* Color for filled stars */
+  }
+
+  .all-boxes{
+    padding: 20px;
+    border: 1px solid grey;
+  }
+
+  /* product.component.css */
+
+.product {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .star-rating {
+    font-size: 20px;
+  }
+  
+  .star {
+    color: gold;
+  }
+  
+  .half-filled::before {
+    content: '\2605';
+    position: absolute;
+    width: 50%;
+    overflow: hidden;
+    color: gold;
+  }
+  

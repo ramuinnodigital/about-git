@@ -1,0 +1,42 @@
+<p>update-value-with-index works!</p>
+
+<div class="my-5">
+    <!-- Display the current items in a list -->
+    <ul>
+      <li *ngFor="let item of items; let i = index">
+        {{ item.name }} - {{ item.description }}
+        <!-- Button to update the item -->
+        <button (click)="updateItem(i, 'New Name', 'New Description')">Update</button>
+      </li>
+    </ul>
+   
+</div>
+
+
+<!-- Angular component template -->
+<div>
+    <!-- Display a form to update items -->
+    <form (ngSubmit)="onSubmit()">
+      <label for="index">Item Index:</label>
+      <input type="number" id="index" name="index" [(ngModel)]="selectedIndex">
+  
+      <label for="name">New Name:</label>
+      <input type="text" id="name" name="name" [(ngModel)]="newName">
+  
+      <label for="description">New Description:</label>
+      <input type="text" id="description" name="description" [(ngModel)]="newDescription">
+  
+      <button type="submit">Update Item</button>
+    </form>
+  
+    <!-- Display the updated items in a list -->
+    <ul>
+      <li *ngFor="let item of items; let i = index">
+        {{ item.name }} - {{ item.description }}
+      </li>
+    </ul>
+  </div>
+  
+
+
+  

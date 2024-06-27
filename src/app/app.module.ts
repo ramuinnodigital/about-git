@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule,NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -49,6 +49,41 @@ import { ParentBarComponent } from './components/through-subject/parent-bar/pare
 import { PaymentGatewayComponent } from './payment-gateway/payment-gateway.component';
 import { InstallRazorpayComponent } from './components/install-razorpay/install-razorpay.component';
 import { ActiveColorsComponent } from './components/active-colors/active-colors.component';
+import { AddCartComponent } from './components/through-subject/add-cart/add-cart.component';
+import { CurdComponent } from './components/curd/curd.component';
+import { CalculatorComponent } from './components/calculator/calculator.component';
+import { OrderTrackingComponent } from './components/order-tracking/order-tracking.component';
+import { NgxChartsComponent } from './components/ngx-charts/ngx-charts.component';
+import { NgApexchartsModule } from 'ng-apexcharts';
+import { SelectImageComponent } from './components/select-image/select-image.component';
+import { SwitchMethodComponent } from './components/switch-method/switch-method.component';
+import { NgxImageZoomModule } from 'ngx-image-zoom';
+import { BoxArrayComponent } from './components/box-array/box-array.component';
+import { ShowHideComponent } from './components/show-hide/show-hide.component';
+import { PraticeComponent } from './components/pratice/pratice.component';
+import { BankDetailsComponent } from './components/bank-details/bank-details.component';
+import { SearchPipe } from '../app/pipes/search.pipe';
+import { PraticeOnArrayComponent } from './components/pratice-on-array/pratice-on-array.component';
+import { PracticeOnFilterComponent } from './components/all-array-methods/practice-on-filter/practice-on-filter.component';
+import { NewCropperComponent } from './components/new-cropper/new-cropper.component';
+import { TextCropperComponent } from './components/text-cropper/text-cropper.component';
+import { StepOneComponent } from './components/query-params/step-one/step-one.component';
+import { StepTwoComponent } from './components/query-params/step-two/step-two.component';
+import { StepThreeComponent } from './components/query-params/step-three/step-three.component';
+import { StepFourComponent } from './components/query-params/step-four/step-four.component';
+import { StepMainComponent } from './components/query-params/step-main/step-main.component';
+import { FormAndPartnerComponent } from './components/form-and-partner/form-and-partner.component';
+import { HostlisterAndHostbindingComponent } from './components/hostlister-and-hostbinding/hostlister-and-hostbinding.component';
+import { HostDirective } from './components/directive';
+import { UpdateValueWithIndexComponent } from './components/update-value-with-index/update-value-with-index.component';
+import { DateFilterComponent } from './components/date-filter/date-filter.component';
+import { SelectDisabledComponent } from './components/select-disabled/select-disabled.component';
+import { CountryCodeComponent } from './components/country-code/country-code.component';
+import { CalBackFunctionsComponent } from './components/cal-back-functions/cal-back-functions.component';
+import { FormThemesColorComponent } from './components/form-themes-color/form-themes-color.component';
+import { NotificationsComponent } from './components/notifications/notifications.component';
+
+
 
 
 
@@ -98,7 +133,38 @@ interface NgxSpinnerConfig {
     ParentBarComponent,
     PaymentGatewayComponent,
     InstallRazorpayComponent,
-    ActiveColorsComponent
+    ActiveColorsComponent,
+    AddCartComponent,
+    CurdComponent,
+    CalculatorComponent,
+    OrderTrackingComponent,
+    NgxChartsComponent,
+    SelectImageComponent,
+    SwitchMethodComponent,
+    BoxArrayComponent,
+    ShowHideComponent,
+    PraticeComponent,
+    BankDetailsComponent,
+    SearchPipe,
+    PraticeOnArrayComponent,
+    PracticeOnFilterComponent,
+    NewCropperComponent,
+    TextCropperComponent,
+    StepOneComponent,
+    StepTwoComponent,
+    StepThreeComponent,
+    StepFourComponent,
+    StepMainComponent,
+    FormAndPartnerComponent,
+    HostlisterAndHostbindingComponent,
+    HostDirective,
+    UpdateValueWithIndexComponent,
+    DateFilterComponent,
+    SelectDisabledComponent,
+    CountryCodeComponent,
+    CalBackFunctionsComponent,
+    FormThemesColorComponent,
+    NotificationsComponent
   ],
   imports: [
     BrowserModule,
@@ -111,10 +177,15 @@ interface NgxSpinnerConfig {
     ToastrModule.forRoot(),
     NgxSpinnerModule,
     NgxOtpInputModule,
-    NgxEditorModule,ImageCropperModule
+    NgxEditorModule,ImageCropperModule,
+    NgApexchartsModule,
+    NgxImageZoomModule,
+    
+   
    
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [NO_ERRORS_SCHEMA]
 })
 export class AppModule { }

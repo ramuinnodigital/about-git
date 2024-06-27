@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <select (change)="selectName($event)">
+                <option value="">--select--</option>
+                <option *ngFor="let data of AllCity; let i = index" (click)="selectOption(i)"  [value]="data.name" >{{data.name}}</option>
+            </select>
+        </div>
+        <div class="col-md-6">
+            <img class="image mt-3" [src]="selectedimage" *ngIf="selectedimage">
+        </div>
+    </div>
+</div>
+
+
+{{minutes}}:{{seconds | number: '2.0'}}
+
+
+<div *ngFor="let data of matrix">
+<div *ngFor="let data of data">
+{{data}}
+</div>
+</div>
+
+<form [formGroup]="passwordForm" >
+    <div>
+      <label>Password:</label>
+      <input type="text" formControlName="password" class="form-control" [ngClass]="{'is-invalid':submitted && f['password'].errors}">
+      <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+       <!-- <div *ngIf="f['password'].errors">Password is required.</div> -->
+    </div>
+    
+    </div>
+    <div class="my-3">
+      <label>Confirm Password:</label>
+      <input type="text"  formControlName="confirmPassword" class="form-control" [ngClass]="{'is-invalid':submitted && f['confirmPassword'].errors}">
+      <div *ngIf="submitted && f['confirmPassword'].errors" class="invalid-feedback">
+        <!-- <div *ngIf="f['confirmPassword'].errors">confirmPassword is required.</div> -->
+        <div *ngIf="f['confirmPassword'].errors['passwordMismatch']">Passwords do not match.</div>
+     </div>
+    </div>
+    <button (click)="submitForm()">Submit</button>
+  </form>
+  
+  
+  

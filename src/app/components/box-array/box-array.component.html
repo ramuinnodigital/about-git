@@ -1,0 +1,37 @@
+<div class="container">
+<div class="row">
+    <div class="col-md-3" *ngFor="let data of dataaaa; let i = index">
+        <div class="box">
+            <h4 class="text-center">{{data.title}}</h4>
+            <p class="text-center">{{data.descriptin}}</p>
+            <button data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="send(i,data.id)">view More</button>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<!-- Button trigger modal -->
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div >
+            <h3 class="text-center">{{selectedValue?.title}}</h3>
+            <p class="text-center">{{selectedValue?.descriptin}}</p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="preview()" *ngIf="i != 0">preview</button>&nbsp;&nbsp;
+          <button type="button" class="btn btn-primary" (click)="next()" *ngIf="i != (dataaaa.length - 1)" >next</button>
+        </div>
+      </div>
+    </div>
+  </div>

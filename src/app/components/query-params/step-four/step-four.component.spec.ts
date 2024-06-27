@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ChildComponent } from './child.component';
+import { StepFourComponent } from './step-four.component';
 
-describe('ChildComponent', () => {
-  let component: ChildComponent;
-  let fixture: ComponentFixture<ChildComponent>;
+describe('StepFourComponent', () => {
+  let component: StepFourComponent;
+  let fixture: ComponentFixture<StepFourComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ChildComponent]
+      declarations: [StepFourComponent]
     });
-    fixture = TestBed.createComponent(ChildComponent);
+    fixture = TestBed.createComponent(StepFourComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

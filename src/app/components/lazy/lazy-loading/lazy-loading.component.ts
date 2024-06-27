@@ -18,10 +18,7 @@ export class LazyLoadingComponent {
 
   ngOnInit(){
     this.senddataTwo=this.service.sentDatatwo
-    this.service.sendData.subscribe((res:any)=>{
-      this.sentData=JSON.stringify(res);
-    })
-    
+   
   }
 
 }

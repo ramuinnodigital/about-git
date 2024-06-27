@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ParentComponent } from './parent.component';
+import { ShowHideComponent } from './show-hide.component';
 
-describe('ParentComponent', () => {
-  let component: ParentComponent;
-  let fixture: ComponentFixture<ParentComponent>;
+describe('ShowHideComponent', () => {
+  let component: ShowHideComponent;
+  let fixture: ComponentFixture<ShowHideComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ParentComponent]
+      declarations: [ShowHideComponent]
     });
-    fixture = TestBed.createComponent(ParentComponent);
+    fixture = TestBed.createComponent(ShowHideComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

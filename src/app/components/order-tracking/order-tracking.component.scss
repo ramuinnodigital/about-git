@@ -1,0 +1,55 @@
+.main{
+    display: flex;
+   
+}
+.round{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid grey;
+}
+.line{
+    height:60px;
+    width: 1px;
+    border: 1px solid grey;
+    margin-left: 10px;
+
+}
+.stats{
+    padding-left: 10px;
+}
+
+.bg-success{
+    background-color: green;
+    border: none;
+}
+
+.bg-shipped{
+    background-color: yellow;
+    border: none;
+}
+.bg-prnding{
+    background-color: orange;
+    border: none;
+}
+
+.bg-canceled{
+    background-color: red;
+    border: none;
+}
+
+.shipped{
+    border: 2px solid yellow;
+}
+
+.success{
+    border: 2px solid green;
+}
+
+.prnding{
+    border: 2px solid orange;
+}
+
+.canceled{
+        border: 2px solid red;
+}

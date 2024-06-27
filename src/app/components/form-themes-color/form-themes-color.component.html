@@ -1,0 +1,19 @@
+  <div>
+    <button (click)="cycleTheme()">Change Theme</button>
+  </div>
+ <div class="form-div">
+    <form [ngClass]="currentTheme" class="form">
+        <!-- Your form fields go here -->
+        <div class="my-2">
+          <label for="studentName">Name:</label>
+          <input id="studentName" name="studentName" class="form-control" type="text">
+        </div>
+        <div>
+          <label for="studentAge">Age:</label>
+          <input id="studentAge" name="studentAge" class="form-control" type="number">
+        </div>
+        <!-- Add more form fields as needed -->
+      </form>
+ </div>
+
+ 

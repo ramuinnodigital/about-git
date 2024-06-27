@@ -1,0 +1,14 @@
+<select>
+    <option *ngFor="let option of options; let i = index" [value]="option.value" [disabled]="option.completed">
+      {{ option.label }}
+    </option>
+  </select>
+  
+  <!-- Input field to enter the index -->
+  <input type="number" [(ngModel)]="selectedIndex" placeholder="Enter index" min="0" max="{{options.length - 1}}">
+  
+  <!-- Submit button -->
+  <button (click)="onSubmit(selectedIndex)">Submit</button>
+  
+
+  

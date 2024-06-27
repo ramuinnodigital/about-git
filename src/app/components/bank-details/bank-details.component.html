@@ -1,0 +1,96 @@
+<div class="box">
+   <div *ngIf="!showdetailsbox">
+    <input type="text" placeholder="search bank" class="formcontrol" [(ngModel)]="search" (keyup)="myentervalue($event)">
+
+    <div class="mt-2" *ngIf="search?.length > 0">
+       <div *ngIf="show">
+        <div *ngFor="let data of bankdetails | searchFilter:search">
+            <span (click)="check(data)">{{data.bankname}}</span>
+         </div>
+       </div>
+    </div>
+
+    
+
+    <div *ngIf="filterbranch" class="mt-2">
+        <input type="text" placeholder="search branch" [(ngModel)]="searchbranch" class="formcontrol" (keyup)="showbranch=true">
+
+       <div *ngIf="searchbranch?.length > 0">
+       <div *ngIf="showbranch">
+        <div *ngFor="let data of filterbranch | searchFilter:searchbranch">
+            <span (click)="checkbranch(data)">{{filterbranch[0].branch}}</span>
+        </div>
+       </div>
+       </div>
+    </div>
+
+    <div *ngIf="filterbranch" class="mt-2">
+        <input type="text" placeholder="search ifsc code" class="formcontrol" [(ngModel)]="searchifsc" (keyup)="checkifsce=true">
+
+        <div *ngIf="searchifsc?.length > 0">
+           <div *ngIf="checkifsce">
+            <div *ngFor="let dataaa of filterbranch | searchFilter:searchifsc">
+                <span (click)="checkifsc(dataaa)">{{dataaa.ifcs}}</span>
+            </div>
+           </div>
+        </div>
+    </div>
+
+    <div>
+    </div>
+   </div>
+
+
+
+    <div class="details-box" *ngIf="showdetailsbox">
+        <div class="text-end m-3">
+            <button (click)="edit()">edit</button>
+        </div>
+        <div class="container">
+         <div class="row mt-2">
+             <div class="col-md-5">
+                 <span>Branch Name</span>
+             </div>
+             <div class="col-md-2">
+                 <span>:</span>
+             </div>
+             <div class="col-md-5">
+                 <span>{{selectedetails?.branch}}</span>
+             </div>
+         </div>
+         <div class="row mt-2">
+             <div class="col-md-5">
+                 <span>IFSC Code</span>
+             </div>
+             <div class="col-md-2">
+                 <span>:</span>
+             </div>
+             <div class="col-md-5">
+                 <span>{{selectedetails?.ifcs}}</span>
+             </div>
+         </div>
+         <div class="row mt-2">
+             <div class="col-md-5">
+                 <span>Address</span>
+             </div>
+             <div class="col-md-2">
+                 <span>:</span>
+             </div>
+             <div class="col-md-5">
+                 <span>{{selectedetails?.address}}</span>
+             </div>
+         </div>
+        </div>
+     </div>
+
+</div>
+
+
+
+<div class="progress">
+    <!-- Use property binding to set the width dynamically -->
+    <div class="progress-bar" role="progressbar" [style.width.%]="progressPercentage" aria-valuenow="{{ progressPercentage }}" aria-valuemin="0" aria-valuemax="100">
+      {{ progressPercentage }}%
+    </div>
+  </div>
+  
